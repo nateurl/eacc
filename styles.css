@@ -1,8 +1,9 @@
 :root {
-    --bg-color: #121212;
+    --bg-color: #0a0a0a;
     --text-color: #e0e0e0;
-    --accent-color: #1E90FF;
-    --secondary-color: #BB86FC;
+    --accent-color: #00ffff;
+    --secondary-color: #ff00ff;
+    --glow-color: rgba(0, 255, 255, 0.7);
 }
 
 body {
@@ -12,6 +13,14 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 header {
@@ -19,6 +28,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -32,14 +42,38 @@ nav ul li {
     margin-left: 2rem;
 }
 
-nav ul li a {
-    color: var(--text-color);
+.neon-button {
+    color: var(--accent-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-nav ul li a:hover {
-    color: var(--accent-color);
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.neon-button:hover {
+    color: var(--bg-color);
+}
+
+.neon-button:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 main {
@@ -52,21 +86,55 @@ section {
     margin-bottom: 4rem;
 }
 
-h1, h2 {
+.glow-text {
     color: var(--accent-color);
+    text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color), 0 0 15px var(--glow-color), 0 0 20px var(--glow-color);
 }
 
-button {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    border: none;
+.typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid var(--accent-color);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color) }
+}
+
+.initiative-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.initiative-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.initiative-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+}
+
+.neon-input {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
     padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: var(--secondary-color);
+    border-radius: 5px;
+    margin-right: 1rem;
 }
 
 footer {
@@ -74,4 +142,3 @@ footer {
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
