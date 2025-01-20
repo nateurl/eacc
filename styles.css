@@ -1,9 +1,7 @@
 :root {
     --bg-color: #0a0a0a;
-    --text-color: #e0e0e0;
-    --accent-color: #00ffff;
-    --secondary-color: #ff00ff;
-    --glow-color: rgba(0, 255, 255, 0.7);
+    --text-color: #ffffff;
+    --accent-color: #ffffff;
 }
 
 body {
@@ -13,7 +11,6 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 #particles-js {
@@ -23,72 +20,24 @@ body {
     z-index: -1;
 }
 
-header {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-nav ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style-type: none;
-    padding: 1rem;
-}
-
-nav ul li {
-    margin-left: 2rem;
-}
-
-.neon-button {
-    color: var(--accent-color);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--accent-color);
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.neon-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--accent-color);
-    z-index: -1;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
-.neon-button:hover {
-    color: var(--bg-color);
-}
-
-.neon-button:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
 main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
 }
 
-section {
+#home {
+    text-align: center;
     margin-bottom: 4rem;
 }
 
-.glow-text {
+h1 {
     color: var(--accent-color);
-    text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color), 0 0 15px var(--glow-color), 0 0 20px var(--glow-color);
+    margin-bottom: 1rem;
 }
 
 .typewriter {
@@ -110,22 +59,16 @@ section {
     50% { border-color: var(--accent-color) }
 }
 
-.initiative-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+#contact {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
 }
 
-.initiative-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.initiative-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+#contact form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .neon-input {
@@ -134,11 +77,61 @@ section {
     color: var(--text-color);
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    margin-right: 1rem;
+    width: 250px;
+}
+
+.neon-button {
+    color: var(--accent-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.neon-button:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+#quotes {
+    margin-top: 2rem;
+}
+
+.quote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.quote-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.quote-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.quote-card cite {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
 }
 
 footer {
     text-align: center;
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.5);
+    margin-top: auto;
 }
