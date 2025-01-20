@@ -7,42 +7,52 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="particles-js"></div>
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#initiatives">Initiatives</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="neon-button">Home</a></li>
+                <li><a href="#about" class="neon-button">About</a></li>
+                <li><a href="#initiatives" class="neon-button">Initiatives</a></li>
+                <li><a href="#contact" class="neon-button">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="home">
-            <h1>Effective Acceleration NZ</h1>
-            <p>Accelerating progress for a brighter future</p>
+            <h1 class="glow-text">Effective Acceleration NZ</h1>
+            <p class="typewriter">Accelerating progress for a brighter future</p>
         </section>
 
         <section id="about">
-            <h2>About E/ACC</h2>
+            <h2 class="glow-text">About E/ACC</h2>
             <p>Effective Acceleration aims to leverage technical knowledge about AI to achieve directed mastery over technological progress.</p>
         </section>
 
         <section id="initiatives">
-            <h2>Our Initiatives</h2>
-            <ul>
-                <li>AI Research</li>
-                <li>Tech Policy Advocacy</li>
-                <li>Innovation Hubs</li>
-            </ul>
+            <h2 class="glow-text">Our Initiatives</h2>
+            <div class="initiative-grid">
+                <div class="initiative-card">
+                    <h3>AI Research</h3>
+                    <p>Pushing the boundaries of artificial intelligence</p>
+                </div>
+                <div class="initiative-card">
+                    <h3>Tech Policy Advocacy</h3>
+                    <p>Shaping the future of technology governance</p>
+                </div>
+                <div class="initiative-card">
+                    <h3>Innovation Hubs</h3>
+                    <p>Fostering collaborative spaces for breakthrough ideas</p>
+                </div>
+            </div>
         </section>
 
         <section id="contact">
-            <h2>Join the Movement</h2>
+            <h2 class="glow-text">Join the Movement</h2>
             <form>
-                <input type="email" placeholder="Your email">
-                <button type="submit">Subscribe</button>
+                <input type="email" placeholder="Your email" class="neon-input">
+                <button type="submit" class="neon-button">Subscribe</button>
             </form>
         </section>
     </main>
@@ -51,6 +61,7 @@
         <p>&copy; 2025 E/ACC New Zealand</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
